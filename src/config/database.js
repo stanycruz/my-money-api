@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
+mongoose.set("useNewUrlParser", true)
 module.exports = mongoose.connect('mongodb://localhost/mymoney', {
     "auth": { "authSource": "admin" },
     "user": "root",
     "pass": "dfweumro",
-    "useMongoClient": true
+    "useMongoClient": true,
 })
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obigatório"
